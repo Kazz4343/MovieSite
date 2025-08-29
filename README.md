@@ -6,11 +6,11 @@ This is a movie website I create as a part of practicing my skill and abitlities
 
 ![MovieSite Screenshot](./assets/screenshot2.png)
 
-🚀 Features
+## 🚀 Features
 Interactive Movie Discovery: Browse and search for movies without any clicking require.
 Loging screen: I plan to integrate authentication system later, for now it is just dummy.
 
-📦 Installation
+## 📦 Installation
 Clone the repository: 
 ```
 cd git clone https://github.com/Kazz4343/MovieSite.git /[Your Destination]
