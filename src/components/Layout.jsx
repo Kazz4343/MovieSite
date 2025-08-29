@@ -2,8 +2,8 @@ import React from 'react';
 
 const Layout = (props) => {
     
-    const { children, isLogin, setIsLogin} = props
-    
+    const { children, isLogin, setIsLogin, setSearchTerm} = props
+
     return (
         <div>
             <header>
@@ -13,11 +13,8 @@ const Layout = (props) => {
                     </div>
                 </div>
                 <div className='search-bar'>
-                    <div className='search-form'>
-                        <input placeholder='Search for Movie' />
-                        <button>
-                            <i className="fa-solid fa-magnifying-glass"></i>
-                        </button>
+                    <div className='search-form' onSubmit={(e)=>{e.preventDefault()}}>
+                        <input placeholder='Search for Movie' onChange={(e)=>{setSearchTerm(e.target.value)}} />
                     </div>
                 </div>
                 <button onClick={()=>{setIsLogin(true)}} className='login-btn'>Login</button>

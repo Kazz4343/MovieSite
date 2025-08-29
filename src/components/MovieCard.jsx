@@ -11,7 +11,7 @@ function MovieCard  (props)  {
             return (
               <div className='movie-card' key={movieIndex}>
                 <img src={`https://image.tmdb.org/t/p/w500/${movie?.poster_path}`} 
-                alt={'movie?.title'}
+                alt='There is no poster available'
                 className="movie-poster"/>
                 <div className='movie-info'>
                   <p className='move-title'>{movie?.title}</p>

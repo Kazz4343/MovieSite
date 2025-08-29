@@ -231,3 +231,10 @@ small {
   align-items: center;
   justify-items: center;
 }
+
+img {
+  color: darkred;
+  font-size: 5rem;
+  text-align: center;
+  background-color:gray;
+}
