@@ -13,8 +13,8 @@ This is a movie website I create as a part of practicing my skill and abitlities
 
    📦 Installation
       Clone the repository: 
-      cd git clone https://github.com/Kazz4343/MovieSite.git /[Your Destination]
+      ```cd git clone https://github.com/Kazz4343/MovieSite.git /[Your Destination]
       cd MovieSite
       npm install
-
+      ```
 
