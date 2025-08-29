@@ -238,3 +238,16 @@ img {
   text-align: center;
   background-color:gray;
 }
+
+.not-found {
+  text-align: center;
+  font-size: 1.5rem;
+  color: gray;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+span {
+  font-weight: bold;
+  color: #B8860B;
+}

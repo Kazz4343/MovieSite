@@ -15,19 +15,24 @@ const App = () => {
     setLoading(true)
     try{
       let res
+
       // Make movie search more forgiving
-      const shortSearchTerm = searchTerm.toLowerCase().replace(/\s/g, '').trim();
-      
-      // prevent search with only spaces
-      if (searchTerm.trim().length > 0) {
+      const sanitizedSearchTerm = searchTerm.trim().replace(/\s/g, '');
+
+      // prevent search with empty string
+      if (sanitizedSearchTerm.length > 0) {
         res = await fetch(
-    `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(shortSearchTerm)}&include_adult=false`);
+    `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(sanitizedSearchTerm)}&include_adult=false`);
       } else {
         res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&include_adult=false`)
         } 
         
       const data = await res.json();
-      setMovieData(data.results);
+
+      setMovieData(
+        data.results
+      );
+      console.log(data);
       
     } catch(err) {
       console.error(err);
@@ -47,11 +52,9 @@ const App = () => {
     setIsLogin(false)
   }
 
-
-
   return (
     <div>
-      <Layout isLogin={isLogin} setIsLogin={setIsLogin} setSearchTerm={setSearchTerm} >
+      <Layout setIsLogin={setIsLogin} setSearchTerm={setSearchTerm} >
 
         {/*LOGIN MODAL*/}
         {isLogin && 
@@ -78,10 +81,10 @@ const App = () => {
             </form>
           </Login>)
           }
-          {/* Movie card */}
 
+          {/* Movie card */}
         {movieData.length === 0 && !loading ? (
-          <p>No movies found</p>
+          <p className='not-found'>No Result found in <span>{searchTerm}</span>. Make sure you type movie name correctly. ex.m3gan,superman, ...</p>
           ) : (
           <MovieCard movieData={movieData} />
         )}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Layout = (props) => {
     
-    const { children, isLogin, setIsLogin, setSearchTerm} = props
+    const { children, setIsLogin, setSearchTerm} = props
 
     return (
         <div>
@@ -12,12 +12,15 @@ const Layout = (props) => {
                         <h1>MovieHD4343</h1>
                     </div>
                 </div>
+
                 <div className='search-bar'>
-                    <div className='search-form' onSubmit={(e)=>{e.preventDefault()}}>
+                    <div className='search-form'>
                         <input placeholder='Search for Movie' onChange={(e)=>{setSearchTerm(e.target.value)}} />
                     </div>
                 </div>
+
                 <button onClick={()=>{setIsLogin(true)}} className='login-btn'>Login</button>
+
             </header>
             
             {children}
